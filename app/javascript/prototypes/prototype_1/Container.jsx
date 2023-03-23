@@ -25,7 +25,7 @@ export default class Container extends Component {
       resolve()
     })
     console.log('Done')
-    window.location.href = "/prototypes/42";
+    window.location.href = "/prototypes/2";
   }
 
   handleNameType = (event) => {
