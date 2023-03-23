@@ -1,7 +1,22 @@
 @prototypes_data = [
   {
-    name: 'First module / First prototype'
-  }
+    name: 'Sorting'
+  },
+  {
+    name: 'B and W / Abstract'
+  },
+  {
+    name: 'B and W / Classic'
+  },
+  {
+    name: 'Colored / Abstract'
+  },
+  {
+    name: 'Colored / Classics'
+  },
+  {
+    name: 'Leave in till commit'
+  },
 ]
 
 def seed
