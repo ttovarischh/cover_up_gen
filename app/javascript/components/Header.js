@@ -47,7 +47,7 @@ export default class Header extends Component {
           </a>
         </div>
         <div className="HeaderItem">
-          <a>
+          <a className={this.props.isDisabled == "guideline" && "blackDisabled"} href='/controllername/mainpage'>
             <p>Гайдлайн</p>
             <svg
               width="16"
@@ -64,7 +64,7 @@ export default class Header extends Component {
           </a>
         </div>
         <div className="HeaderItem">
-          <a href="/prototypes/1">
+          <a className={this.props.isDisabled == "generate" && "blackDisabled"} href="/prototypes/1">
             <p>Генерить</p>
             <svg
               width="20"
@@ -77,7 +77,6 @@ export default class Header extends Component {
                 fillRule="evenodd"
                 clipRule="evenodd"
                 d="M3.07698 0.25H19.7501V16.9231H18.2501V2.81066L1.53039 19.5303L0.469727 18.4697L17.1894 1.75H3.07698V0.25Z"
-                stroke="white"
                 strokeWidth="0.2"
               />
             </svg>

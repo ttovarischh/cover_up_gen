@@ -6,12 +6,15 @@ export default class SC_Button extends PureComponent {
   }
 
   render() {
-    const { text, handleClick, buttonType, buttonLink, children, id } = this.props
+    const { text, handleClick, buttonType, buttonLink, children, id } =
+      this.props
 
     if (buttonType == 'link') {
       return (
         <a href={buttonLink}>
-          <div className="SC_Button">{text}</div>
+          <div className="SC_Button" id={id}>
+            {text}
+          </div>
         </a>
       )
     } else if (buttonType == 'iconAction') {

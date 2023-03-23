@@ -165,7 +165,7 @@ export default class MainPage extends React.Component {
                 ></Card>
                 <Card
                   buttonText="Узнать больше"
-                  buttonLink="/prototypes/42"
+                  buttonLink="/controllername/mainpage"
                   colorType="inverted"
                   type="info"
                   text1="Введи начальные значения для генератора, и посмотри на первый вариант суперобложки. Настрой детали, чтобы все точно нравилось. Сохрани и распечатай на обычном принтере."

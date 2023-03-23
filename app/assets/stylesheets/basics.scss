@@ -16,6 +16,52 @@ body.prototypes_show {
   display: flex;
   margin: 0;
 }
+
+#substep {
+  background-image: url('substep.svg');
+  background-position: center center;
+  background-size: cover;
+}
+#s1_1 {
+  background-image: url('1_1.svg');
+  background-position: center center;
+  background-size: cover;
+}
+#s1_2 {
+  background-image: url('1_2.svg');
+  background-position: center center;
+  background-size: cover;
+}
+#s2_1 {
+  background-image: url('2_1.svg');
+  background-position: center center;
+  background-size: cover;
+}
+#s2_2 {
+  background-image: url('2_2.svg');
+  background-position: center center;
+  background-size: cover;
+}
+#s3_1 {
+  background-image: url('3_1.svg');
+  background-position: center center;
+  background-size: cover;
+}
+#s3_2 {
+  background-image: url('3_2.svg');
+  background-position: center center;
+  background-size: cover;
+}
+#s4_1 {
+  background-image: url('4_1.svg');
+  background-position: center center;
+  background-size: cover;
+}
+#s4_2 {
+  background-image: url('4_2.svg');
+  background-position: center center;
+  background-size: cover;
+}
 .Disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -83,6 +129,23 @@ body.prototypes_show {
 .Active {
   background: #f1f8f4;
   transition: all 1s ease;
+}
+.disabled {
+  color: #a5b1aa;
+  svg {
+    stroke: #a5b1aa !important;
+    fill: #a5b1aa !important;
+  }
+}
+
+.Scrolled {
+  .disabled {
+    color: var(--light-green);
+    svg {
+      stroke: var(--light-green) !important;
+      fill: var(--light-green) !important;
+    }
+  }
 }
 #prototype_1 {
   .MainColumn {
@@ -234,6 +297,29 @@ body.prototypes_show {
       opacity: 0.7;
       transition: all 0.5s ease;
     }
+  }
+}
+#guide {
+  .ColumnsWrapper {
+    h2 {
+      min-height: 120px;
+    }
+    #fW {
+      width: 608px;
+      min-width: 608px;
+    }
+  }
+  .SC_ButtonPlus {
+    pointer-events: none;
+    max-height: 255px;
+    &:hover {
+      opacity: 1;
+      transition: 0.5s ease all;
+    }
+  }
+  #supersecondary {
+    background-color: #dce3df !important;
+    color: black !important;
   }
 }
 
@@ -728,6 +814,14 @@ h3 {
   }
   a {
     color: var(--white) !important;
+  }
+  .blackDisabled {
+    color: #616d66 !important;
+    svg {
+      stroke: #616d66 !important;
+      fill: #616d66 !important;
+      stroke-width: 0 !important;
+    }
   }
 }
 .Scrolled {
