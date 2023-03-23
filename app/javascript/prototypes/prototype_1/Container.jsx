@@ -89,9 +89,9 @@ export default class Container extends Component {
     console.log(this.state.styl)
     if (this.state.colorful == 'true') {
       if (this.state.styl == 'abstract') {
-        window.location.href = '/prototypes/4'
-      } else if (this.state.styl == 'classic') {
         window.location.href = '/prototypes/5'
+      } else if (this.state.styl == 'classic') {
+        window.location.href = '/prototypes/4'
       }
     } else {
       if (this.state.styl) {
@@ -159,7 +159,7 @@ export default class Container extends Component {
               <>
                 <SC_Button
                   buttonType="select"
-                  text="Люблю всякое абстрактное"
+                  text="Люблю всякое экспериментальное"
                   id="option3"
                   handleClick={() => this.setState({ styl: 'abstract' })}
                 >

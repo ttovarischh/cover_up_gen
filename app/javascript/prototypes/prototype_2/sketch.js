@@ -7,14 +7,7 @@ import {
   getStoreName
 } from './store'
 
-const canvasSize = 600
 import myFontUrl from '../../../assets/fonts/MM.ttf'
-import { func } from 'prop-types'
-
-const shiftSize = {
-  x: 0,
-  y: 0
-}
 
 let myFont
 function preload(p) {
@@ -24,16 +17,8 @@ function preload(p) {
 let canvasContainerId1 = ''
 let canvasContainerId2 = ''
 let canvasContainerId3 = ''
-
-let shiftSeed = 5
-let cells = 30
-let cellSize = calcCellSize()
-
-let xCenter, yCenter
-
-function calcCellSize() {
-  return canvasSize / cells
-}
+var x, y, w, h
+var totalShapeCount = 3
 
 function getMyData() {
   let value = localStorage.getItem('bookName')
@@ -47,57 +32,6 @@ function getMyAbout() {
   let value = localStorage.getItem('bookAbout')
   return value
 }
-
-// function drawTile(p, row, column) {
-//   if (getStoreEffect()) {
-//     const weight = getRandomArbitrary(0, 4)
-//     p.strokeWeight(weight)
-//   }
-
-//   if (getStoreEnthropy()) {
-//     shiftSeed = (row + column) / 8
-//   }
-
-//   if (getStoreShift()) {
-//     const s = getRandomArbitrary(-shiftSeed, shiftSeed)
-//     shiftSize.x = s
-//     shiftSize.y = s
-//   } else {
-//     shiftSize.y = getRandomArbitrary(-shiftSeed, shiftSeed)
-//   }
-
-//   xCenter = (column + 1) * cellSize - cellSize / 2 + shiftSize.x
-//   yCenter = (row + 1) * cellSize - cellSize / 2 + shiftSize.y
-
-//   if (column === 0) {
-//     p.beginShape()
-//     p.vertex(xCenter, yCenter)
-//   } else {
-//     p.bezierVertex(xCenter, yCenter, xCenter, yCenter, xCenter, yCenter)
-//   }
-
-//   if (column === cells - 1) {
-//     p.endShape()
-//   }
-// }
-
-// function drawTiles(p) {
-//   p.background(0)
-
-//   if (getStoreEffect()) {
-//     cells = Math.floor(getRandomArbitrary(30, 120))
-//     cellSize = calcCellSize()
-//   }
-
-//   for (let row = 0; row < cells; row++) {
-//     for (let column = 0; column < cells; column++) {
-//       drawTile(p, row, column)
-//     }
-//   }
-// }
-
-var x, y, w, h
-var totalShapeCount = 3
 
 const left = function sketch(p) {
   p.setup = () => {
@@ -234,8 +168,6 @@ function drawColoredRandomShape(p, choice) {
   h = p.random(5, 100)
   let myColour = p.color(102, p.random(255), 209)
 
-  //   наклон верх_y
-
   if (choice == 'ellipse') {
     p.fill(myColour)
     p.noStroke()
@@ -252,8 +184,6 @@ function drawInvertedRandomShape(p, choice) {
   y = p.random(p.height)
   w = p.random(200, 400)
   h = p.random(5, 100)
-
-  //   наклон верх_y
 
   if (choice == 'ellipse') {
     p.fill(210)
@@ -272,8 +202,6 @@ function drawRandomShape(p, choice) {
   w = p.random(200, 400)
   h = p.random(5, 100)
 
-  //   наклон верх_y
-
   if (choice == 'ellipse') {
     p.noStroke()
     p.fill(30)
@@ -284,8 +212,6 @@ function drawRandomShape(p, choice) {
     p.rect(x, y, w, h)
   }
 }
-
-let val = 'Hello, world'
 
 const right = function sketch(p) {
   p.setup = () => {
@@ -316,14 +242,6 @@ const right = function sketch(p) {
 
     p.fill(210)
     p.rect(92, 136, 242, 336)
-
-    // let input = p.createInput()
-    // input.position(20, 30)
-    // input.input(myInputEvent)
-    // let button = p.createButton('submit')
-    // button.position(160, 30)
-    // let name = input.value()
-    // button.mousePressed(drawName(p))
   }
 
   p.draw = () => {
@@ -407,16 +325,6 @@ const right = function sketch(p) {
       }
     }
   }
-}
-
-function drawName(p) {
-  p.textSize(18)
-  p.fill(p.random(255))
-  p.text(getStoreName(), p.random(p.width), p.random(p.height))
-}
-
-function myInputEvent() {
-  val = this.value()
 }
 
 const center = function sketch(p) {

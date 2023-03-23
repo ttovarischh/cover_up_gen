@@ -9,10 +9,10 @@
     name: 'B and W / Classic'
   },
   {
-    name: 'Colored / Abstract'
+    name: 'Colored / Сlassics'
   },
   {
-    name: 'Colored / Classics'
+    name: 'Colored / Abstract`'
   }
 ]
 

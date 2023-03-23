@@ -41,6 +41,7 @@ export default class Card extends Component {
                 ? 'Example Wide'
                 : 'Example Square'
             }
+            id={this.props.id}
           >
             <div className="Gradient">
               <h2>{this.props.bookName}</h2>

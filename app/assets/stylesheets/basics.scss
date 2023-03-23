@@ -16,6 +16,31 @@ body.prototypes_show {
   display: flex;
   margin: 0;
 }
+#thecatcher {
+  background: url('thecatcher.jpg');
+  background-size: auto 100%;
+  background-position: center center;
+}
+#exampletwo {
+  background: url('example2.jpg');
+  background-size: cover;
+  background-position: center center; 
+}
+#examplethree {
+  background: url('example3.jpg');
+  background-size: cover;
+  background-position: center center; 
+}
+#examplefour {
+  background: url('example4.jpg');
+  background-size: cover;
+  background-position: center center; 
+}
+#examplefive {
+  background: url('example5.jpg');
+  background-size: cover;
+  background-position: center center; 
+}
 
 #substep {
   background-image: url('substep.svg');
@@ -672,6 +697,12 @@ h3 {
       .Square {
         background: url('CARD2.jpg');
         background-size: cover;
+        .TagsWrapper {
+          flex-direction: column;
+          .Tag {
+            width: fit-content;
+          }
+        }
       }
       .Info {
         grid-column: span 2;

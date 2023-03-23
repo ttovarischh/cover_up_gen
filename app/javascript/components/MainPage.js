@@ -41,7 +41,7 @@ export default class MainPage extends React.Component {
     return (
       <>
         <div className="MainWrapper">
-          <Header isScrolled={this.state.date} isMain={true}/>
+          <Header isScrolled={this.state.date} isMain={true} />
           <div className="MainContent">
             <div className="LogoWrapper">
               <div className="LogoShadow"></div>
@@ -151,18 +151,27 @@ export default class MainPage extends React.Component {
                 <Card
                   type="exampleWide"
                   bookName="«Над пропастью во ржи» Д.Д. Сэлинджер"
+                  id="exampletwo"
                 >
-                  <div className="Tag">Романтика</div>
-                  <div className="Tag">Минимаализм</div>
+                  <div className="Tag">ЧБ</div>
+                  <div className="Tag">Классическое</div>
                 </Card>
                 <Card
                   type="exampleSquare"
+                  id="thecatcher"
                   bookName="«Над пропастью во ржи» Д.Д. Сэлинджер"
-                ></Card>
+                >
+                  <div className="Tag">Чб</div>
+                  <div className="Tag">Экспериментальное</div>
+                </Card>
                 <Card
                   type="exampleSquare"
-                  bookName="«Над пропастью во ржи» Д.Д. Сэлинджер"
-                ></Card>
+                  id="examplethree"
+                  bookName="«Имя розы»&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Умберто Эко"
+                >
+                  <div className="Tag">Цветное</div>
+                  <div className="Tag">Экспериментальное</div>
+                </Card>
                 <Card
                   buttonText="Узнать больше"
                   buttonLink="/controllername/mainpage"
@@ -217,12 +226,20 @@ export default class MainPage extends React.Component {
                 </Card>
                 <Card
                   type="exampleWide"
-                  bookName="«Над пропастью во ржи» Д.Д. Сэлинджер"
-                ></Card>
+                  id="examplefive"
+                  bookName="«Москва – Петушки»&emsp;&emsp;&emsp; Венедикт Ерофеев"
+                >
+                  <div className="Tag">Цветное</div>
+                  <div className="Tag">Классическое</div>
+                </Card>
                 <Card
                   type="exampleSquare"
-                  bookName="«Над пропастью во ржи» Д.Д. Сэлинджер"
-                ></Card>
+                  id="examplefour"
+                  bookName="«Москва – Петушки»&emsp;&emsp;&emsp; Венедикт Ерофеев"
+                >
+                  <div className="Tag">Цветное</div>
+                  <div className="Tag">Классическое</div>
+                </Card>
               </div>
               <div className="OneLink">
                 <h2>Все примеры</h2>
