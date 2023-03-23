@@ -84,7 +84,7 @@ body.prototypes_show {
   background: #f1f8f4;
   transition: all 1s ease;
 }
-#prototype_5, #prototype_1 {
+#prototype_1 {
   .MainColumn {
     justify-content: space-between;
     align-items: center;
@@ -272,9 +272,12 @@ body.prototypes_show {
     border-radius: 100px;
   }
 }
-
+#prototype_1,
 #prototype_2,
-#prototype_5, #prototype_1 {
+#prototype_3,
+#prototype_4,
+#prototype_5,
+#prototype_6 {
   background-image: url('pBG');
   background-size: 1459px 864px;
   background-position: center center;

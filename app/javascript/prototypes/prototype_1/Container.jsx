@@ -24,8 +24,23 @@ export default class Container extends Component {
       console.log('Almost Done')
       resolve()
     })
-    console.log('Done')
-    window.location.href = "/prototypes/2";
+    console.log(this.state.colorful)
+    console.log(this.state.styl)
+    if (this.state.colorful == 'true') {
+      if (this.state.styl == 'abstract') {
+        window.location.href = '/prototypes/4'
+      } else if (this.state.styl == 'classic') {
+        window.location.href = '/prototypes/5'
+      }
+    } else {
+      if (this.state.styl) {
+        if (this.state.styl == 'abstract') {
+          window.location.href = '/prototypes/2'
+        } else if (this.state.styl == 'classic') {
+          window.location.href = '/prototypes/3'
+        }
+      }
+    }
   }
 
   handleNameType = (event) => {

@@ -13,10 +13,7 @@
   },
   {
     name: 'Colored / Classics'
-  },
-  {
-    name: 'Leave in till commit'
-  },
+  }
 ]
 
 def seed
