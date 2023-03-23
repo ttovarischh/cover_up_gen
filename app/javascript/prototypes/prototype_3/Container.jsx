@@ -173,7 +173,7 @@ export default class Container extends Component {
             </h2>
             <SC_Button
               buttonType="iconAction"
-              handleClick={this.handleEffectChange}
+              handleClick={this.handleEnthropyChange}
             >
               <svg
                 width="39"

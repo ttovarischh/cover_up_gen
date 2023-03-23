@@ -93,74 +93,71 @@ const left = function sketch(p) {
 
     p.draw = () => {
       if (getStoreShift()) {
-        p.background(210)
-
-        for (var x = 30; x < p.width; x += p.width / 7) {
-          for (var y = 50; y < p.height; y += p.height / 7) {
-            p.stroke(0)
-            p.strokeWeight(1)
-            p.line(x, 50, x, p.height - 36)
-            p.line(30, y, p.width - 32, y)
-          }
+        p.background(black)
+    
+        let pos = p.createVector(214, 360)
+        let circle_rad = 300
+        let spiral = p.createVector(
+          p.map(p.mouseX, 0, p.width, 0.003, 0.005),
+          p.map(p.mouseY, 0, p.height, 0.003, 0.005)
+        )
+        p.fill(255)
+        for (let i = 0; i <= circles; ++i) {
+          let r = spiral.x * i
+          let ratio = i / circles
+          let angle = i * goldenAngle
+          let spiral_rad = ratio * circle_rad
+          let x = pos.x + p.cos(angle) * spiral_rad
+          let y = pos.y + p.sin(angle) * spiral_rad
+          p.noStroke()
+          p.ellipse(x, y, r)
         }
+    
+        p.fill(white)
+        p.noStroke()
+        p.rect(0, 0, 427.64, 155)
 
-        let xVal = p.random(30, 300)
-        let yVal = p.random(30, 400)
-
-        p.stroke(255, 50)
-        for (var i = 0; i < totalShapeCount; i++) {
-          drawColoredRandomShape(p, 'rectangle')
-        }
-
-        p.stroke(0, 50)
-        for (var i = 0; i < totalShapeCount; i++) {
-          drawColoredRandomShape(p, 'ellipse')
-        }
-
-        p.textSize(18)
+        p.fill(black)
+        p.textSize(22)
         p.textFont(myFont)
-        p.text(getMyData(), 30, 34)
-        p.fill(240)
-
-        p.textSize(18)
+        let nameWidth = p.textWidth(getMyData())
+        let authorWidth = p.textWidth(getMyAuthor())
+        // prettier-ignore
+        p.text(getMyData(),(427 / 2) - (nameWidth / 2), 96)
+    
         p.textFont(myFont)
-        p.text(getMyAuthor(), xVal, yVal)
+        p.text(getMyAuthor(), (427 / 2) - (authorWidth / 2), 70)
         p.fill(0, 102, 153, 51)
       }
 
       if (getStoreEffect()) {
-        p.background(30)
-        for (var x = 30; x < p.width; x += p.width / 7) {
-          for (var y = 50; y < p.height; y += p.height / 7) {
-            p.stroke(210)
-            p.strokeWeight(1)
-            p.line(x, 50, x, p.height - 36)
-            p.line(30, y, p.width - 32, y)
-          }
+        p.fill(255)
+        for (let i = 0; i <= circles; ++i) {
+          let r = spiral.x * i
+          let ratio = i / circles
+          let angle = i * goldenAngle
+          let spiral_rad = ratio * circle_rad
+          let x = pos.x + p.cos(angle) * spiral_rad
+          let y = pos.y + p.sin(angle) * spiral_rad
+          p.noStroke()
+          p.ellipse(x, y, r)
         }
 
-        p.stroke(255, 50)
-        for (var i = 0; i < totalShapeCount; i++) {
-          drawInvertedRandomShape(p, 'rectangle')
-        }
+        p.fill(white)
+        p.noStroke()
+        p.rect(0, 0, 427.64, 155)
 
-        p.stroke(0, 50)
-        for (var i = 0; i < totalShapeCount; i++) {
-          drawInvertedRandomShape(p, 'ellipse')
-        }
-
-        let xVal = p.random(30, 300)
-        let yVal = p.random(30, 400)
-
-        p.textSize(18)
+        p.fill(black)
+        p.textSize(22)
         p.textFont(myFont)
-        p.text(getMyData(), 30, 34)
-        p.fill(30)
-
-        p.textSize(18)
+        let nameWidth = p.textWidth(getMyData())
+        let authorWidth = p.textWidth(getMyAuthor())
+        // prettier-ignore
+        p.text(getMyData(),(427 / 2) - (nameWidth / 2), 96)
+    
         p.textFont(myFont)
-        p.text(getMyAuthor(), xVal, yVal)
-        p.fill(210)
+        p.text(getMyAuthor(), (427 / 2) - (authorWidth / 2), 70)
+        p.fill(0, 102, 153, 51)
       }
 
       if (getStoreSave()) {
@@ -211,23 +208,6 @@ function drawInvertedRandomShape(p, choice) {
   }
 }
 
-function drawRandomShape(p, choice) {
-  x = p.random(p.width)
-  y = p.random(p.height)
-  w = p.random(200, 400)
-  h = p.random(5, 100)
-
-  if (choice == 'ellipse') {
-    p.noStroke()
-    p.fill(30)
-    p.ellipse(x, y, w, w)
-  } else {
-    p.noStroke()
-    p.fill(30)
-    p.rect(x, y, w, h)
-  }
-}
-
 const right = function sketch(p) {
   p.setup = () => {
     const canvas = p.createCanvas(427.64, 593)
@@ -267,36 +247,34 @@ const right = function sketch(p) {
 
     p.draw = () => {
       if (getStoreShift()) {
-        p.background(210)
-
-        for (var x = 30; x < p.width; x += p.width / 7) {
-          for (var y = 50; y < p.height; y += p.height / 7) {
-            p.stroke(0)
-            p.strokeWeight(1)
-            p.line(x, 50, x, p.height - 36)
-            p.line(30, y, p.width - 32, y)
-          }
+        p.background(black)
+    
+        let pos = p.createVector(214, 360)
+        let circle_rad = 300
+        let spiral = p.createVector(
+          p.map(p.mouseX, 0, p.width, 0.003, 0.005),
+          p.map(p.mouseY, 0, p.height, 0.003, 0.005)
+        )
+        p.fill(255)
+        for (let i = 0; i <= circles; ++i) {
+          let r = spiral.x * i
+          let ratio = i / circles
+          let angle = i * goldenAngle
+          let spiral_rad = ratio * circle_rad
+          let x = pos.x + p.cos(angle) * spiral_rad
+          let y = pos.y + p.sin(angle) * spiral_rad
+          p.noStroke()
+          p.ellipse(x, y, r)
         }
-
-        p.stroke(255, 50)
-        for (var i = 0; i < totalShapeCount; i++) {
-          drawColoredRandomShape(p, 'rectangle')
-        }
-
-        p.stroke(0, 50)
-        for (var i = 0; i < totalShapeCount; i++) {
-          drawColoredRandomShape(p, 'ellipse')
-        }
-
-        p.fill(210)
-        p.stroke(0)
-        p.strokeWeight(1)
-        p.rect(91, 135, 244, 338)
+    
+        p.fill(white)
+        p.noStroke()
+        p.rect(0, 0, 427.64, 155)
 
         p.textSize(12)
         p.textFont(myFont)
         p.fill(0)
-        p.text(getMyAbout(), 104, 160, 240)
+        p.text(getMyAbout(), 30, 30, 360)
       }
 
       if (getStoreEffect()) {
@@ -375,8 +353,29 @@ const center = function sketch(p) {
 
   p.draw = () => {
     if (getStoreShift()) {
-      let myColour = p.color(102, p.random(255), 209)
-      p.background(myColour)
+      p.background(black)
+  
+      let pos = p.createVector(214, 360)
+      let circle_rad = 300
+      let spiral = p.createVector(
+        p.map(p.mouseX, 0, p.width, 0.003, 0.005),
+        p.map(p.mouseY, 0, p.height, 0.003, 0.005)
+      )
+      p.fill(255)
+      for (let i = 0; i <= circles; ++i) {
+        let r = spiral.x * i
+        let ratio = i / circles
+        let angle = i * goldenAngle
+        let spiral_rad = ratio * circle_rad
+        let x = pos.x + p.cos(angle) * spiral_rad
+        let y = pos.y + p.sin(angle) * spiral_rad
+        p.noStroke()
+        p.ellipse(x, y, r)
+      }
+  
+      p.fill()
+      p.noStroke()
+      p.rect(0, 0, 427.64, 155)
     }
     if (getStoreEffect()) {
       p.background(30)

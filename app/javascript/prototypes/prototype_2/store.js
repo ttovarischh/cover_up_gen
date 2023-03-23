@@ -2,7 +2,7 @@ let shift = false
 let enthropy = false
 let effect = false
 let save = false
-let name = "Поющие в терновнике"
+let name = false
 
 function getStoreShift() {
   return shift

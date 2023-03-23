@@ -53,6 +53,17 @@ export default class Container extends Component {
     })
   }
 
+  handleNameChange = () => {
+    const { setStoreName } = this.props
+    const { name } = this.state
+    setStoreName(!name)
+
+    this.setState({
+      name: !name
+    })
+  }
+
+
   handleShiftChange = () => {
     const { setStoreShift } = this.props
     const { shift } = this.state
@@ -173,7 +184,7 @@ export default class Container extends Component {
             </h2>
             <SC_Button
               buttonType="iconAction"
-              handleClick={this.handleEffectChange}
+              handleClick={this.handleEnthropyChange}
             >
               <svg
                 width="39"
@@ -191,7 +202,7 @@ export default class Container extends Component {
             </SC_Button>
             <SC_Button
               buttonType="iconAction"
-              handleClick={() => window.location.reload()}
+              handleClick={this.handleNameChange}
             >
               <svg
                 width="27"
@@ -234,28 +245,6 @@ export default class Container extends Component {
               </div>
             </div>
           </div>
-          {/* <input
-            name="myInput"
-            placeholder={name}
-            onChange={this.handleNameType}
-          />
-          <h2>{bookName}</h2>
-          <SC_ToggleButton
-            text="shift"
-            isOn={shift}
-            handleClick={this.handleShiftChange}
-          />
-          <SC_ToggleButton
-            text="enthropy"
-            isOn={enthropy}
-            handleClick={this.handleEnthropyChange}
-          />
-          <SC_ToggleButton
-            text="effect"
-            isOn={effect}
-            handleClick={this.handleEffectChange}
-          />
-          <SC_Button handleClick={this.handleSaveCanvas} text={'save me'} /> */}
         </div>
       </div>
     )

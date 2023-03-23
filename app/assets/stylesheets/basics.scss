@@ -11,6 +11,13 @@
 body {
   background: var(--light-green);
 }
+#prototype_1 {
+  .SC_ButtonPlus {
+    h2 {
+      max-width: 230px !important;
+    }
+  }
+}
 
 body.prototypes_show {
   display: flex;
