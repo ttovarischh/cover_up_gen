@@ -106,17 +106,11 @@ const left = function sketch(p) {
         p.textFont(myFont)
         p.text(getMyData(), 30, 34)
         p.fill(240)
-    
-        p.textSize(18)
-        p.textFont(myFont)
-        p.text(getMyAuthor(), xVal, yVal)
-        p.fill(0, 102, 153, 51)
 
         for (var n = 0; n < 100; n++) {
           p.textSize(18)
           p.textFont(myFont)
-          p.text(getMyAuthor(), xVal, yVal)
-          p.fill(0, 102, 153, 51)
+          p.text(getMyAuthor(), p.random(427), p.random(500))
         }
       }
       if (getStoreEnthropy()) {
@@ -327,6 +321,43 @@ const right = function sketch(p) {
     p.text(getMyAbout(), 104, 160, 240)
 
     p.draw = () => {
+      if (getStoreName()) {
+        p.background(210)
+    
+        for (var x = 30; x < p.width; x += p.width / 7) {
+          for (var y = 50; y < p.height; y += p.height / 7) {
+            p.stroke(0)
+            p.strokeWeight(1)
+            p.line(x, 50, x, p.height - 36)
+            p.line(30, y, p.width - 32, y)
+          }
+        }
+
+        p.fill(210)
+        p.rect(92, 136, 242, 336)
+    
+        p.stroke(255, 50)
+        for (i = 0; i < totalShapeCount; i++) {
+          drawRandomShape(p, 'rectangle')
+        }
+    
+        p.stroke(0, 50)
+        for (i = 0; i < totalShapeCount; i++) {
+          drawRandomShape(p, 'ellipse')
+        }
+
+        p.textSize(12)
+        p.textFont(myFont)
+        p.fill(0)
+        p.text(getMyAbout(), 104, 160, 240)
+
+        for (var n = 0; n < 100; n++) {
+          p.textSize(18)
+          p.textFont(myFont)
+          p.text(getMyAuthor(), p.random(427), p.random(500))
+        }
+      }
+
       if (getStoreShift()) {
         p.background(210)
 
